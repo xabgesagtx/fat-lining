@@ -1,5 +1,8 @@
 # Fat lining
 
+
+[![Build Status](https://travis-ci.org/xabgesagtx/fat-lining.svg?branch=master)](https://travis-ci.org/xabgesagtx/fat-lining)
+
 This app helps to keep track of your weight
 
 ## Features
