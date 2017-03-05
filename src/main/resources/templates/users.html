@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
+<head>
+	<title th:text="#{users.title}">users</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<h1 th:text="#{users.headline}">All measurements</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th th:text="#{users.name}">Name</th>
+				<th th:text="#{users.email}">E-Mail</th>
+				<th th:text="#{users.createdDate}">Created</th>
+				<th th:text="#{users.actions}">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.name}">Name</td>
+				<td th:text="${user.email}">test@example.com</td>
+				<td th:text="${#temporals.format(user.createdDate, 'dd.MM.yyyy HH:mm')}"></td>
+				<td><form class="inline-block" th:if="${user.activated}" th:action="@{'/admin/users/' + ${user.id} + '/deactivate'}" method="post">
+						<input type="submit" class="btn btn-default" value="Deactivate"  th:value="#{users.actions.deactivate}"/>
+					</form>
+					<form class="inline-block" th:if="${!user.activated}" th:action="@{'/admin/users/' + ${user.id} + '/activate'}" method="post">
+						<input type="submit" class="btn btn-default" value="Activate"  th:value="#{users.actions.activate}"/>
+					</form>
+					<a th:href="@{'/admin/users/' + ${user.id} + '/details'}" th:title="#{users.actions.details}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+					<a th:href="@{'/admin/users/' + ${user.id} + '/password'}" th:title="#{users.actions.password}"  class="btn btn-default"><span class="glyphicon glyphicon-lock"></span></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

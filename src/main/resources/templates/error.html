@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" layout:decorator="layout">
+<head>
+	<title th:inline="text">[[${statusCode}]]</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<div class="jumbotron">
+		<h1 th:inline="text"><span class="glyphicon glyphicon-thumbs-down"></span> [[${statusCode}]]: [[${errorMessage}]]</h1>
+	</div>
+</div>
+</body>
+</html>

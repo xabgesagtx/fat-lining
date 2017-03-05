@@ -1,0 +1,12 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+#placeholder {
+	height: 400px;	
+}
+
+.inline-block {
+	display: inline-block;
+}

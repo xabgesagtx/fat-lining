@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost/weightm"
+    username: weightm
+    password: weightm
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
