@@ -21,7 +21,7 @@ This app helps to keep track of your weight
 
 Configuration can be done via `application.yml` that has to be put next to `fat-lining.jar`
 
-###Example configuration for mysql usage
+### Example configuration for mysql usage
 ```
 config:
   adminPassword: admin
@@ -34,7 +34,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 ```
 
-###Configuration parameters
+### Configuration parameters
 
 * config.adminPassword: set the password for the admin user
 * config.adminEmail: set the email address for the admin user
